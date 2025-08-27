@@ -1,10 +1,11 @@
 import { IVehicle } from "../contracts/IVehicle";
 import { ILogger } from "../logging/ILogger";
+import type Point = require("../models/Point");
 
 export class RouteRunner {
     constructor(private logger: ILogger) {}
 
-    run(vehicle: IVehicle, route: Point[]) {
+    run(vehicle: IVehicle, route: Point.Point[]) {
         this.logger.info("route:start", {
             vehicleTyoe: vehicle.type,
             steps: route.length

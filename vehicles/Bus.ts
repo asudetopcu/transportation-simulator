@@ -1,8 +1,9 @@
 import  { VehicleBase }  from "../core/VehicleBase"
 import { ILogger } from "../logging/ILogger";
+import { Point } from "../models/Point";
 
 export class Bus extends VehicleBase {
-    readonly type : "bus";
+    readonly type! : "bus";
 
     constructor(location: Point = { x: 0, y: 0 }, logger: ILogger) {
         super(location, logger);

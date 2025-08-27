@@ -3,7 +3,7 @@ import { ILogger } from "../logging/ILogger";
 import { Point } from "../models/Point";
 
 export class Taxi extends VehicleBase {
-    readonly type : "taxi";
+    readonly type! : "taxi";
 
     constructor(location: Point = {x:0, y:0}, logger: ILogger) {
         super(location, logger);

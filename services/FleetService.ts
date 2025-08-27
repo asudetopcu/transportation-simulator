@@ -1,5 +1,6 @@
 import { IVehicle } from "../contracts/IVehicle";
 import { ILogger } from "../logging/ILogger";
+import { Point } from "../models/Point";
 
 export class FleetService {
     constructor(private logger: ILogger){}
