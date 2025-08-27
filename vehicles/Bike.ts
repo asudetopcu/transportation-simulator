@@ -1,9 +1,15 @@
 import  { VehicleBase }  from "../core/VehicleBase"
+import { ILogger } from "../logging/ILogger";
 
-class Bike extends VehicleBase {
+export class Bike extends VehicleBase {
     readonly type : "bike";
-    protected move(point: Point) : void {
-        console.log(`Bisiklet ${this.currentLocation.x}, ${this.currentLocation.y}'den ${point.x}, ${point.y} gidiyor.`);
-        this.currentLocation = point;
+    
+    constructor(location: Point = { x: 0, y: 0 }, logger: ILogger) {
+        super(location, logger);
+    }
+
+    protected move(point: Point): void {
+        this.logger.info("bike:announce", { to: point, from: this.currentLocation });
+        super.move(point);
     }
 }
