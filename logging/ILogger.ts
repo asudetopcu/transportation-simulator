@@ -1,4 +1,4 @@
-import < LogEntry > from
+import  { LogEntry } from "./types";
 
 export interface ILogger {
     log(entry: LogEntry): void;
